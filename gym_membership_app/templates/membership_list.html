@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'membership_create' %}">add member</a>
+<table>
+    {% for member in members %}
+    {% if member.membership_remain == 0 %}
+    <tr>
+        <td>{{member.name}}</td>
+        <td><a href="{% url 'membership_delete' member.id %}">delete</a></td>
+        <td><a href="{% url 'membership_renewal' member.id %}">renewal</a></td>
+        <td>Expired</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+<br>
+<table>
+    {% for member in members %}
+    <tr>
+        {% if member.membership_remain > 0 %}
+        <td>{{member.name}}</td>
+        <td><a href="{% url 'membership_delete' member.id %}">delete</a></td>
+        <td><a href="{% url 'membership_view' member.id %}">view</a></td>
+        <td>{{member.membership_remain}}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
