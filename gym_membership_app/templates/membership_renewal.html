@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>renewal</title>
+</head>
+<body class="body-AddMember">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}"> 
+<div class="MC-user">
+    <a class="buttonRegister" href="{% url 'home' %}">Go Back</a>
+    <p class="request">GYM:{{ request.user }}</p>
+</div>
+<form class="add-form" method="post">
+    {% csrf_token %}
+    {{form.GYM}}
+    <p class="py-form">Members name:{{form.name}}</p>
+    <p class="py-form">Sessions:{{form.sessions}}</p>
+    <p class="py-form">Date:{{form.membership_date}}</p>
+    <br>
+    <input class="added" type="submit" value="renewal">
+</form>
+</body>
+</html>

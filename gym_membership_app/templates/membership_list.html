@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Members</title>
+</head>
+<body class="members">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">  
+    <a class="DV" href="{% url 'home' %}">Home</a>  
+    <div class="tables">
+        <table>
+            <tr>
+                <td class="infoex">Expired</td>
+            </tr>
+            {% for member in members %}
+            <tr>
+                {% if member.membership_remain <= 0 %}
+                <td class="memberInfo">{{member.name}}</td>
+                <td class="memberInfo"><a class="tableA" href="{% url 'membership_delete' member.id %}">delete</a></td>
+                <td class="memberInfo"><a  class="tableA" href="{% url 'membership_renewal' member.id %}">renewal</a></td>
+            {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+        <table>
+            <tr>
+                <td class="info">Name</td>
+                <td class="info">Delete</td>
+                <td class="info">View</td>
+                <td class="info">Days</td>
+            </tr>
+            {% for member in members %}
+            <tr>
+                {% if member.membership_remain > 0 %}
+                <td class="memberInfo">{{member.name}}</td>
+                <td class="memberInfo"><a class="tableA" href="{% url 'membership_delete' member.id %}">delete</a></td>
+                <td class="memberInfo"><a class="tableA" href="{% url 'membership_view' member.id %}">view</a></td>
+                <td class="memberInfo">{{member.membership_remain}}</td>
+                {% endif %}
+            </tr>       
+            {% endfor %} 
+        </table>    
+    </div>  
+</body>
+</html>

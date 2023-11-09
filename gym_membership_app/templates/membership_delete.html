@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Members</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}"> 
+
+<form class="form" method="post">
+    {% csrf_token %}
+    {{form}}
+    <p class="P">are you sure you want to delete this member? <strong>{{member.name}}</strong></p>
+    <div class="inputA">
+    <input class="deleting" type="submit" value="Yes">
+    <a class="deleting" href="{% url 'membership_list' %}">No</a>
+</form>
+</body>
+</html>
