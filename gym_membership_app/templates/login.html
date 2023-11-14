@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
 </head>
-<body>
-<h1>Login</h1>
-<form method="post">
+<body class="Lbody">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}"> 
+<h1 class="Lname">Login</h1>
+<form class="Lform" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="login">
+    <input type="submit" value="Login" class="Linput">
 </form>
-<p>you didnt register an account yet? <a href="{% url 'register' %}">register</a></p>
+<p class="Lregister">dont you have an account?<a class="La" href="{% url 'register' %}">Register</a></p>
 </body>
 </html>

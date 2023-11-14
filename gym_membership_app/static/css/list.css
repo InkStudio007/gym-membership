@@ -16,8 +16,8 @@ body{
 .name{
     text-align: center;
     font-size: larger;
-    margin-left: 265px;
-    margin-right: 263px;
+    margin-left: 279px;
+    margin-right: 301px;
     font-size: 50px;
 }
 .add-list{
@@ -127,13 +127,31 @@ margin-right: 10px;
 .gym{
     background-color: rgb(238, 255, 255);
 } 
-a:hover{
-    color:rgb(78, 78, 255);
-}
         /* list */
+.br{
+margin-bottom: 5px;
+}
 .info{
     background-color: red;
     color: whitesmoke;
+    border: 1px solid red;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: larger;
+    padding: 5px;
+} 
+.infoex{
+    background-color: red;
+    color: whitesmoke;
+    border: 1px solid red;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: larger;
+    padding: 5px;
+}
+.infoex:hover{
+    background-color: red;
+    color: black;
     border: 1px solid red;
     border-radius: 4px;
     font-family: sans-serif;
@@ -275,4 +293,88 @@ a:hover{
     margin-top: 10px;
     border-color: red;
 }
+    /* end */
+    /* login */
+.Lbody{
+    font-family: arial;
+}    
+.Lname{
+    text-align: center;
+    font-size: 60px;
+}
+.Lform{
+    text-align: center;
+}
+.Linput{
+    background-color: red;
+    color: black;
+    border-color: red;
+    border-radius: 4px;
+    font-size: 40px;
+}
+.Lregister{
+    border-radius: 4px;
+    background-color: rgb(176, 176, 176);
+    color: whitesmoke;
+    margin-left: 386px;
+    width: 485px;
+    padding: 5px;
+}
+.La{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.La:hover{
+    color: black;
+    text-decoration: underline;
+}
+.La:active{
+    color: whitesmoke;
+    text-decoration: none;
+}
+    /* end */
+    /* register */
+.Rbody{
+    font-family: arial;
+}   
+.P{
+    margin-bottom: 10px;
+}
+
+.Rname{
+    text-align: center;
+    font-size: 60px;
+}
+.Rform{
+    text-align: center;
+    margin: 5px;
+}
+.Rinput{
+    background-color: red;
+    color: black;
+    border-color: red;
+    border-radius: 4px;
+    font-size: 40px;
+}
+.Rregister{
+    border-radius: 4px;
+    background-color: rgb(176, 176, 176);
+    color: whitesmoke;
+    margin-left: 386px;
+    width: 485px;
+    padding: 5px;
+}
+.Ra{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.Ra:hover{
+    color: black;
+    text-decoration: underline;
+}
+.Ra:active{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
     /* end */

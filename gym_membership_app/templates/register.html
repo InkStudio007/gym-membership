@@ -1,15 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
 </head>
-<body>
-<form method="post">
+<body class="Rbody">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}"> 
+<h1 class="Rname">Register</h1>
+<form class="Rform" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="register">
+    Username:{{form.username}}
+    <br>
+    <p class="P"></p>
+    Passsword:{{form.password1}}
+    <br>
+    <p class="P"></p>
+    Password Confirmation:{{form.password2}}
+    <br>
+    <ul>
+        <li>your password cant be entirely numeric.</li>
+        <li>your password must contain at least 8 characters.</li>
+    </ul>    
+    <p class="P"></p>
+    <input type="submit" value="Register" class="Rinput">
 </form>
-<p>you already have an account? <a href="{% url 'login' %}">login</a></p>
+<p class="Rregister">you already have an account?<a class="Ra" href="{% url 'login' %}">login</a></p>
 </body>
 </html>
