@@ -1,13 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>View</title>
+    <link rel="icon" type="image" href="/static/splash.jpg" >
 </head>
-<body>
-{{ member.name }}
-{{ member.sessions }}
-{{ member.memebership_date }}
-{{ member.membership_remain }}
+<body class="view">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}"> 
+
+<div class="Vdiv">
+    <a class="buttonRegister" href="{% url 'membership_list' %}">other Members</a>
+    <h1 class="Vname">Members Name:{{ member.name }}</h1>
+</div>
+<p class="V">Whole Sessions:{{ member.sessions }}</p>
+<p class="V">Date:{{ member.memebership_date }}</p>
+<p class="V">Remain Days:{{ member.membership_remain }}</p>
 </body>
 </html>
