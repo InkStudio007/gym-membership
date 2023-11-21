@@ -26,7 +26,7 @@ class Login(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy('membership_list')
+        return reverse_lazy('home')
 
 
 class Register(FormView):
@@ -41,7 +41,7 @@ class Register(FormView):
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect('membership_list')
+            return redirect('home')
         return super(Register, self).get(*args, **kwargs)
 
 
@@ -65,7 +65,7 @@ def membership_list(request):
 
 class MembershipCreate(CreateView, LoginRequiredMixin):
     model = Membership
-    fields = '__all__'
+    fields = ['GYM', 'name', 'sessions', 'membership_date']
     template_name = 'membership_create.html'
     success_url = reverse_lazy('membership_list')
 
@@ -85,6 +85,6 @@ class MembershipView(DetailView, LoginRequiredMixin):
 
 class MembershipRenewal(UpdateView, LoginRequiredMixin):
     model = Membership
-    fields = '__all__'
+    fields = ['GYM', 'name', 'sessions', 'membership_date']
     template_name = 'membership_renewal.html'
     success_url = reverse_lazy('membership_list')
